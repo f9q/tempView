@@ -34,6 +34,7 @@ public class Thermograph extends View {
 
     private     BlurMaskFilter  contourFilter;
     private     Timer           warningTimer;
+    private     TimerTask       warningTask;
     @Override
     protected void onDraw(Canvas canvas) {
         Log.e("Thermograph", "onDraw: value = " + value );
@@ -163,13 +164,11 @@ public class Thermograph extends View {
         invalidate();
     }
     private void startWarning(){
-        warning = 0;
         if (warningTimer != null){
             stopWarning();
         }
         if (warningTimer == null){
-            warningTimer = new Timer();
-            warningTimer.schedule(new TimerTask() {
+            warningTask = new TimerTask() {
                 @Override
                 public void run() {
                     contourFilter = null;
@@ -191,13 +190,17 @@ public class Thermograph extends View {
                     contourFilter = new BlurMaskFilter(warning, BlurMaskFilter.Blur.NORMAL);
                     postInvalidate();
                 }
-            },200 * 1,200 * 1);
+            };
+            warningTimer = new Timer();
+            warningTimer.schedule(warningTask,200 * 1,200 * 1);
         }
     }
     private void stopWarning(){
         warning = 0;
         if (warningTimer != null){
+            warningTask.cancel();
             warningTimer.cancel();
+            warningTask = null;
             warningTimer = null;
         }
     }
