@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="thermograph">
+        <attr name="minValue"       format="float" />
+        <attr name="maxValue"       format="float" />
+        <attr name="ratio"          format="float" />
+        <attr name="hotValue"       format="float" />
+        <attr name="coldValue"      format="float" />
+        <attr name="thermoValue"    format="float" />
+        <attr name="textSize"       format="dimension" />
+        <attr name="warningColor"   format="color" />
+        <attr name="contourColor"   format="color" />
+        <attr name="textColor"      format="color" />
+        <attr name="borderColor"    format="color" />
+        <attr name="hotColor"       format="color" />
+        <attr name="coldColor"      format="color" />
+        <attr name="valueColor"     format="color" />
+        <attr name="showValue"      format="boolean" />
+
+    </declare-styleable>
+</resources>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#7B68EE</color>
+    <color name="colorPrimaryDark">#7f7B68EE</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="colorMainBackground">#7B68EE</color>
+    <color name="temp1_color">#fe8c32</color>
+
+    <color name="temp_hot_color">#CD0000</color>
+    <color name="temp_cold_color">#7A378B</color>
+    <color name="temp_border_color">#aef0fb</color>
+    <color name="temp_color">#aef0fb</color>
+
+</resources>
